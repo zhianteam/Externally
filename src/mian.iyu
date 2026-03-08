@@ -1,0 +1,293 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+background=#EAEAF4
+ps=Background
+paddingTop=25dp</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+padding=25dp</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="TextView">
+<ppt>width=-1
+height=-2
+text=Externally
+textColor=#000000
+textSize=45dp
+textStyle=bold
+layout_marginBottom=15dp
+typeface=@fonts/Product-Sans/Product-Sans-Bold.ttf</ppt>
+<event></event>
+</View>
+<View id="4" did="2" type="LinearLayout">
+<ppt>width=-1
+height=255dp
+//高度算法: 6*项目总数 + 5*项目总数 - 1
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="5" did="4" type="CardView">
+<ppt>width=-1
+height=-1
+app_CardcornerRadius=25dp
+app_CardBackgroundColor=#00000000
+elevation=0dp</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center_vertical</ppt>
+<event></event>
+</View>
+<View id="7" did="6" type="LinearLayout">
+<ppt>width=-1
+height=60dp
+background=#D5E3FE
+elevation=0dp
+gravity=center
+BackgroundRipple=#7B7C81
+ps=Element</ppt>
+<event><eventItme type="clicki">java(sss.pkg,activity,"Context.getPackageName")
+s bash = "sh /data/user_de/0/"+ sss.pkg + "/shizuku "
+s code1 = bash + "touch /data/local/tmp/chrome-command-line"
+s code2 = bash + "chmod 666 /data/local/tmp/chrome-command-line"
+call(null,"mjava","shelln.exec", null, code1)
+call(null,"mjava","shelln.exec", null, code2)
+tw("Install Config")
+
+/.
+this way has bugs.
+t(){
+	java(sss.pkg,activity,"Context.getPackageName")
+	//tw(sss.pkg)
+	ufnsui()
+	{
+		ug(4,"text",textarea)
+		s cmd = "sh /data/user_de/0/"+ sss.pkg + "/shizuku " + "touch /data/local/tmp/chrome-command-line && chmod 666 /data/local/tmp/chrome-command-line"
+		syso("view: " + cmd)
+		gvs(5,显示内容控件)
+	}
+	call(null,"mjava","shell.exec",显示内容控件,cmd)
+}./</eventItme><eventItme type="press">java(sss.pkg,activity,"Context.getPackageName")
+s bash = "sh /data/user_de/0/"+ sss.pkg + "/shizuku "
+s code = bash + "rm /data/local/tmp/chrome-command-line"
+call(null,"mjava","shelln.exec", null, code)
+tw("Uninstall Config")
+//uigo("shell.iyu")</eventItme></event>
+</View>
+<View id="9" did="7" type="TextView">
+<ppt>width=-2
+height=-2
+text=注入命令
+textColor=#021B3A
+textSize=15dp
+textStyle=bold
+typeface=@fonts/Roboto/Roboto-Light.ttf</ppt>
+<event></event>
+</View>
+<View id="8" did="6" type="LinearLayout">
+<ppt>width=-1
+height=60dp
+background=#D5E3FE
+elevation=0dp
+gravity=center
+layout_marginTop=5dp
+BackgroundRipple=#7B7C81
+ps=Element</ppt>
+<event><eventItme type="clicki">fr("@chrome-commands.txt",basic)
+
+java(sss.pkg,activity,"Context.getPackageName")
+s bash = "sh /data/user_de/0/"+ sss.pkg + "/shizuku " + "echo '" + basic + "' &gt;/data/local/tmp/chrome-command-line"
+s code1 = bash + ""
+call(null,"mjava","shelln.exec", null, code1)
+tw("Update Config")</eventItme></event>
+</View>
+<View id="10" did="8" type="TextView">
+<ppt>width=-2
+height=-2
+text=更新配置
+textColor=#021B3A
+textSize=15dp
+textStyle=bold
+typeface=@fonts/Roboto/Roboto-Light.ttf</ppt>
+<event></event>
+</View>
+<View id="14" did="6" type="LinearLayout">
+<ppt>width=-1
+height=60dp
+background=#D5E3FE
+elevation=0dp
+gravity=center
+layout_marginTop=5dp
+BackgroundRipple=#7B7C81
+ps=Element</ppt>
+<event><eventItme type="clicki">s url = "https://ipv6.google.com/"
+call(null,"mjava","chrome.open", url)
+tw("Power by Catndroid!")</eventItme></event>
+</View>
+<View id="15" did="14" type="TextView">
+<ppt>width=-2
+height=-2
+text=启动Chrome
+textColor=#021B3A
+textSize=15dp
+textStyle=bold
+typeface=@fonts/Roboto/Roboto-Light.ttf</ppt>
+<event></event>
+</View>
+<View id="19" did="6" type="LinearLayout">
+<ppt>width=-1
+height=60dp
+background=#D5E3FE
+elevation=0dp
+gravity=center
+layout_marginTop=5dp
+BackgroundRipple=#7B7C81
+ps=Element</ppt>
+<event><eventItme type="clicki">s a = ""
+s b = "about.iyu"
+s c = ""
+utw(null, a, b, c, false, v)
+{
+syso("点击了确定")
+}</eventItme></event>
+</View>
+<View id="20" did="19" type="TextView">
+<ppt>width=-2
+height=-2
+text=关于
+textColor=#021B3A
+textSize=15dp
+textStyle=bold
+typeface=@fonts/Roboto/Roboto-Light.ttf</ppt>
+<event></event>
+</View>
+<View id="11" did="2" type="LinearLayout">
+<ppt>width=-1
+height=90dp
+orientation=horizontal
+layout_marginTop=30dp</ppt>
+<event></event>
+</View>
+<View id="12" did="11" type="ImageView">
+<ppt>width=-2
+height=25dp
+src=@ic_warning_circle_24dp.png
+layout_marginRight=5dp</ppt>
+<event></event>
+</View>
+<View id="13" did="11" type="TextView">
+<ppt>width=-2
+height=25dp
+text=请确保已安装 Shizuku 并配置相关环境。
+textColor=#021B3A
+textSize=15dp
+typeface=normal
+gravity=center
+typeface=@fonts/Roboto/Roboto-Regular.ttf</ppt>
+<event></event>
+</View>
+<View id="16" did="2" type="LinearLayout">
+<ppt>width=-1
+height=90dp
+orientation=vertical
+layout_marginTop=30dp
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="21" did="16" type="ScrollView">
+<ppt>width=-2
+height=-2</ppt>
+<event></event>
+</View>
+<View id="18" did="21" type="TextView">
+<ppt>width=-1
+height=-1
+text=Shell
+textColor=#021B3A
+textSize=15dp
+typeface=normal</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">java(window,activity,"android.app.Activity.getWindow")
+java(attribute,window,"android.view.Window.getAttributes")
+javass(null,attribute,"android.view.WindowManager$LayoutParams","layoutInDisplayCutoutMode",3)
+java(null,window,"android.view.Window.setAttributes","android.view.WindowManager$LayoutParams",attribute)
+java(get,window,"android.view.Window.getDecorView")
+java(null,get,"android.view.View.setSystemUiVisibility","int",-1)
+java(null,window,"android.view.Window.setSoftInputMode","int",16)
+
+//uycl("#EAEAF4", true)
+
+java(pkg,activity,"Context.getPackageName")
+java(程序配置,activity,"Context.getApplicationInfo")
+javags(程序私有安全目录,程序配置,"android.content.pm.ApplicationInfo","deviceProtectedDataDir")
+fdir(程序私有安全目录+"/shizuku",程序路径)
+fdir(程序私有安全目录+"/shizuku.dex",dex路径)
+fr("@shizuku",shellcode)
+fd(程序路径,null)
+sr(shellcode,"PKG",pkg,shellcode)
+fw(程序路径,shellcode)
+fe(程序路径,程序是否成功拷贝)
+fc("@shizuku.dex",dex路径,dex是否成功拷贝)
+java(null,null,"android.system.Os.chmod","String",程序路径,"int",770)
+java(null,null,"android.system.Os.chmod","String",dex路径,"int",770)
+f(程序是否成功拷贝&&dex是否成功拷贝){
+  ufnsui()
+  {
+  	us(13,"text","请确保配置相关环境。")
+      //us(11,"visibility","gone")
+  }
+}else{
+  tw("程序安装失败")
+}
+
+// Debug Mode Info
+java(sss.package,activity,"Context.getPackageName")
+f(sss.package == "com.iapp.app")
+{
+	tw("当前为生产环境，进入调试模式")
+    us(16,"visibility","visible")
+}
+else
+{
+	syso(sss.package)
+}
+
+tws(null,"请在1079238199群或共享空间“Cat1239920”\n两处下载源码,其他途径下载，安全性自查",0,"加群~"){
+  sit(a,"action","android.intent.action.VIEW")
+  sit(a,"data","mqqapi://card/show_pslcard?scr_type=internal&version=1&uin=1079238199&card_type=group&source=qrcode")
+  uit(a,"chooser","1079238199")
+}</eventItme><eventItme type="loadingComplete">
+// Material Color Loader
+
+// Load Config
+fr("@theme/background",ThemeValueBackground)
+fr("@theme/inelementfont",ThemeValueInelementfont)
+fr("@theme/font",ThemeValueFont)
+fr("@theme/element",ThemeValueElement)
+fr("@theme/elementripple",ThemeValueElementRipple)
+
+// Assgin To DOM
+us(1, "background", ThemeValueBackground)
+
+us(7, "background", ThemeValueElement)
+us(8, "background", ThemeValueElement)
+us(14, "background", ThemeValueElement)
+us(19, "background", ThemeValueElement)
+
+us(7,"backgroundripple",ThemeValueElementRipple)
+us(8,"backgroundripple",ThemeValueElementRipple)
+us(14,"backgroundripple",ThemeValueElementRipple)
+us(19,"backgroundripple",ThemeValueElementRipple)
+
+syso("bg" + ThemeValueBackground)
+syso("bg" + ThemeValueElement)</eventItme></UIEventset>

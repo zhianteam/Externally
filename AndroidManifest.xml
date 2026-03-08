@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<title>Externally Preview</title>
+<icon>icon.png</icon>
+<packageName>com.externally.example</packageName>
+<versionName>1.1.d</versionName>
+<versionint>1</versionint>
+<sdk>15</sdk>
+<yuv>3</yuv>
+
+<remark>裕v3项目，SNI伪造工具，支持自定义颜色加载，Material UI</remark>
+<Permissions>android.permission.READ_EXTERNAL_STORAGE
+android.permission.REQUEST_INSTALL_PACKAGES
+android.permission.INTERNET
+android.permission.WRITE_EXTERNAL_STORAGE</Permissions>
+<createTime>2025-12-31 17:28:40</createTime>
+<upTime>2025-12-31 17:28:40</upTime>

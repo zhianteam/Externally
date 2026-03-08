@@ -1,0 +1,111 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=42dp
+orientation=vertical
+backgroundcolor=#50c4e5
+gravity=center_vertical</ppt>
+<event><eventItme type="clicki">ug(5,"text",codenow)
+syso(codenow)
+
+t(){
+	ufnsui()
+	{
+		s cmd = "sh /data/user_de/0/com.outsider.my/shizuku " + "ls /data/local/tmp/"
+		syso(cmd)
+		gvs(5,显示内容控件)
+	}
+	call(null,"mjava","shell.exec",显示内容控件,cmd)
+}</eventItme></event>
+</View>
+<View id="2" did="1" type="TextView">
+<ppt>width=-2
+height=-2
+text=我的应用iApp
+textsize=16sp
+textcolor=#ffffff
+layout_marginleft=10dp</ppt>
+<event></event>
+</View>
+<View id="9" did="0" type="LinearLayout">
+<ppt>width=-2
+height=-2
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="7" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=horizontal
+gravity=center_vertical</ppt>
+<event></event>
+</View>
+<View id="3" did="7" type="TextInputLayout">
+<ppt>width=-2
+height=-2
+layout_weight=1</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="EditText">
+<ppt>width=-1
+height=-2
+text=whoami
+hint=指令:</ppt>
+<event></event>
+</View>
+<View id="8" did="7" type="Button">
+<ppt>width=-2
+height=-2
+text=运行</ppt>
+<event><eventItme type="clicki">java(sss.pkg,activity,"Context.getPackageName")
+s cmd = "sh /data/user_de/0/"+ sss.pkg + "/shizuku " + "touch /data/local/tmp/chrome-command-line && chmod 666 /data/local/tmp/chrome-command-line"
+call(null,"mjava","shelln.exec", null, cmd)
+
+/.t(){
+	java(sss.pkg,activity,"Context.getPackageName")
+	//tw(sss.pkg)
+	ufnsui()
+	{
+		ug(4,"text",textarea)
+		s cmd = "sh /data/user_de/0/"+ sss.pkg + "/shizuku " + textarea
+		syso("view: " + cmd)
+		gvs(5,显示内容控件)
+	}
+	call(null,"mjava","shell.exec",显示内容控件,cmd)
+}./</eventItme></event>
+</View>
+<View id="6" did="0" type="ScrollView">
+<ppt>width=-1
+height=-1
+background=white</ppt>
+<event></event>
+</View>
+<View id="5" did="6" type="TextView">
+<ppt>width=-1
+height=-2
+text=文本5
+padding=5dp
+gravity=bottom</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">
+java(pkg,activity,"Context.getPackageName")
+java(程序配置,activity,"Context.getApplicationInfo")
+javags(程序私有安全目录,程序配置,"android.content.pm.ApplicationInfo","deviceProtectedDataDir")
+fdir(程序私有安全目录+"/shizuku",程序路径)
+fdir(程序私有安全目录+"/shizuku.dex",dex路径)
+fr("@shizuku",shellcode)
+fd(程序路径,null)
+sr(shellcode,"PKG",pkg,shellcode)
+fw(程序路径,shellcode)
+fe(程序路径,程序是否成功拷贝)
+fc("@shizuku.dex",dex路径,dex是否成功拷贝)
+java(null,null,"android.system.Os.chmod","String",程序路径,"int",770)
+java(null,null,"android.system.Os.chmod","String",dex路径,"int",770)
+f(程序是否成功拷贝&&dex是否成功拷贝){
+  tw("程序安装成功")
+}else{
+  tw("程序安装失败")
+}
+
+
+</eventItme></UIEventset>

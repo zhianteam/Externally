@@ -1,0 +1,45 @@
+import android.widget.TextView;
+import java.io.OutputStream;
+import java.io.InputStreamReader;
+import android.content.Intent;
+import android.net.Uri;
+
+public static void exec(TextView tv, String cmd) throws Exception {
+	
+	i.t(new com.iapp.interfaces.OnThread(){
+		public void run(){
+			try{
+				Process Program = Runtime.getRuntime().exec("sh");
+				OutputStream os = Program.getOutputStream();
+				os.write((cmd + "\nExit\n").getBytes());
+				os.flush();
+				os.close();
+				
+				InputStreamReader out = new InputStreamReader(Program.getInputStream());
+				InputStreamReader err = new InputStreamReader(Program.getErrorStream());
+				char[] cache = new char[1024];
+				int len;
+				StringBuffer sb = new StringBuffer(Program.toString());
+				sb.append('\n');
+				
+				while ((len = out.read(cache)) != -1) sb.append(cache, 0, len);
+				out.close();
+				while ((len = err.read(cache)) != -1) sb.append(cache, 0, len);
+				err.close();
+				
+				int code = Program.waitFor();
+				sb.append("\nExit code ").append(code);
+				
+				i.ufnsui(new com.iapp.interfaces.OnHandler(){
+					public void on(){
+						i.syso(sb.toString());
+					}
+				});
+			}catch(Exception e){
+				i.ufnsui(new com.iapp.interfaces.OnHandler(){
+					public void on(){ i.syso("ShellN.Error:" + e.getMessage()); }
+				});
+			}
+		}
+	});
+}

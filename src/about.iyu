@@ -1,0 +1,64 @@
+<View id="1" did="0" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=vertical
+background=#EAEAF4
+padding=20dp</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="LinearLayout">
+<ppt>width=-1
+height=80dp
+orientation=horizontal</ppt>
+<event></event>
+</View>
+<View id="3" did="2" type="ImageView">
+<ppt>width=-2
+height=-1
+src=17301567
+</ppt>
+<event></event>
+</View>
+<View id="5" did="2" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+layout_marginLeft=10dp</ppt>
+<event></event>
+</View>
+<View id="6" did="5" type="TextView">
+<ppt>width=-1
+height=-2
+text=Externally
+textColor=#000000
+textSize=25dp
+typeface=@fonts/Roboto/Roboto-Regular.ttf</ppt>
+<event></event>
+</View>
+<View id="7" did="5" type="TextView">
+<ppt>width=-1
+height=-2
+text=简单的 SNI 伪造工具
+textColor=#000000
+textSize=14dp
+typeface=@fonts/Roboto/Roboto-Regular.ttf</ppt>
+<event></event>
+</View>
+<View id="8" did="5" type="TextView">
+<ppt>width=-1
+height=-2
+text=PackageName
+textColor=#000000
+textSize=14dp
+typeface=@fonts/Roboto/Roboto-Regular.ttf
+typeface=monospace</ppt>
+<event></event>
+</View>
+<UIEventset><eventItme type="loading">java(s.pkg,activity,"Context.getPackageName")
+	ufnsui()
+	{
+		us(21,"text",s.pkg)
+	}
+
+fr("@theme/element",ThemeValueElement)
+us(1,"background",ThemeValueElement)</eventItme></UIEventset>

@@ -1,0 +1,37 @@
+import android.widget.TextView;
+import java.io.OutputStream;
+import java.io.InputStreamReader;
+import android.content.Intent;
+import android.net.Uri;
+
+public static void exec(TextView tv,String cmd){
+  Process 进程 = Runtime.getRuntime().runtime.exec("sh");
+  OutputStream os = 进程.getOutputStream();
+  os.write((cmd+"\nExit\n").getBytes());
+  os.flush();
+  InputStreamReader is = new InputStreamReader(进程.getInputStream());
+  char[]cache = new char[1024];
+  int len = 0;
+  StringBuffer sb = new StringBuffer(进程.toString());
+  sb.append('\n');
+  while ( ( len = is.read(cache) ) != -1){
+    sb.append(cache,0,len);
+    i.ufnsui(
+    new com.iapp.interfaces.OnHandler(){
+      public void on(){
+        tv.setText(sb.toString());
+        i.gvs(6).fullScroll(android.widget.ScrollView.FOCUS_DOWN);
+      }
+    }
+    );
+  }
+  sb.append("\nExit code ");
+  sb.append(进程.exitValue());
+  i.ufnsui(
+  new com.iapp.interfaces.OnHandler(){
+    public void on(){
+      tv.setText(sb.toString());
+    }
+  }
+  );
+}
